@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IIInsomnia10</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/win_favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/Font-Awesome_v4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="js/perfect-scrollbar/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="css/IIInsomnia10.css">
+    <script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
+</head>
+
+<body oncontextmenu="return false">
+    <div class="IIInsomnia10" id="IIInsomnia10">
+        <div class="desktop" id="desktop">
+            <ul class="shortcut" id="shortcut">
+                <li class="ink" data-window="1" data-title="W3C" data-icon="chrome" data-url="http://www.w3cplus.com/" title="W3C">
+                    <div class="p-logo">
+                        <i class="fa fa-chrome fa-4x"></i>
+                        <span>W3C</span>
+                    </div>
+                </li>
+                <li class="ink" data-window="2" data-title="QQ轻聊" data-icon="firefox" data-url="http://www.qq.com/" title="QQ轻聊">
+                    <div class="p-logo">
+                        <i class="fa fa-firefox fa-4x"></i>
+                        <span>QQ轻聊</span>
+                    </div>
+                </li>
+                <li class="ink" data-window="3" data-title="微信" data-icon="internet-explorer" data-url="http://weixin.qq.com/" title="微信">
+                    <div class="p-logo">
+                        <i class="fa fa-internet-explorer fa-4x"></i>
+                        <span>微信</span>
+                    </div>
+                </li>
+                <li class="ink" data-window="4" data-title="酷6网" data-icon="edge" data-url="http://www.ku6.com/" title="酷6网">
+                    <div class="p-logo">
+                        <i class="fa fa-edge fa-4x"></i>
+                        <span>酷6网</span>
+                    </div>
+                </li>
+                <li class="ink" data-window="5" data-title="FontAwesome" data-icon="apple" data-url="http://fortawesome.github.io/Font-Awesome/" title="FontAwesome">
+                    <div class="p-logo">
+                        <i class="fa fa-apple fa-4x"></i>
+                        <span>FontAwesome</span>
+                    </div>
+                </li>
+                <li class="ink" data-window="6" data-title="worktile" data-icon="windows" data-url="http://v3.bootcss.com/" title="Bootstrap">
+                    <div class="p-logo">
+                        <i class="fa fa-android fa-4x"></i>
+                        <span>Bootstrap</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="taskbar" id="taskbar">
+            <div class="winStart" id="winStart"><i class="fa fa-windows fa-2x"></i></div>
+            <ul class="task-wrap" id="task_wrap"></ul>
+        </div>
+        <div class="startmenu" id="startmenu">
+            <div class="menus">
+                <ul class="links">
+                    <li>
+                        <div class="avatar"><img src="images/user.jpg" alt=""></div><span>ShengHui</span></li>
+                    <li id="menu_bars"><i class="fa fa-bars fa-2x"></i><span>我的菜单</span></li>
+                    <li class="link" data-window="7" data-title="修改密码" data-icon="lock" data-url="http://www.baidu.com"><i class="fa fa-lock fa-2x"></i><span>修改密码</span></li>
+                    <li class="link" data-window="8" data-title="我的设置" data-icon="cog" data-url="http://www.w3cplus.com/"><i class="fa fa-cog fa-2x"></i><span>我的设置</span></li>
+                    <li class="logout"><a href="#"><i class="fa fa-power-off fa-2x"></i><span>注销系统</span></a></li>
+                </ul>
+            </div>
+            <div class="programs" id="programs"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js"></script>
+    <script type="text/javascript" src="js/IIInsomnia10.js"></script>
+    <script>
+    var iiisomnia = new IIInsomnia10({
+        // 'fullScreen': true,
+        'windowWidth': 800,
+        'windowHeight': 600,
+        'loading': 'images/loading.gif',
+        'layout': [1, 5, 17, 5, 10, 13, 5, 1, 11, 1, 17] //自定义布局【1：深灰 | 2：深灰宽 | 3：深灰大左 | 4：深灰大右 | 5：浅灰 | 6：浅灰宽 | 7：浅灰大左 | 8：浅灰大右 | 9：红 | 10：红宽 | 11：红大左 | 12：红大右 | 13：黄 | 14：黄宽 | 15：黄大左 | 16：黄大右 | 17：蓝 | 18：蓝宽 | 19：蓝大左 | 20：蓝大右】
+    });
+    iiisomnia.init();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,735 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei UI";
+    font-size: 12px;
+}
+html, body {
+    height: 100%;
+    background: url("../images/desktop/desktop.jpg") no-repeat center;
+    background-size: cover;
+}
+.IIInsomnia10 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.IIInsomnia10 ul {
+    list-style: none;
+}
+.IIInsomnia10 a {
+    text-decoration: none;
+}
+/*桌面*/
+.IIInsomnia10 .desktop {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 40px;
+    overflow: hidden;
+}
+/*快捷方式*/
+.IIInsomnia10 .shortcut {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    list-style: none;
+}
+.IIInsomnia10 .shortcut .ink {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0;
+}
+.IIInsomnia10 .shortcut .ink:before{
+    display: inline-block;
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+}
+.IIInsomnia10 .shortcut .ink:hover {
+    background: rgba(250, 250, 250, 0.2);
+}
+.IIInsomnia10 .shortcut .ink .p-logo{
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    margin-top: 6px;
+}
+.IIInsomnia10 .shortcut .ink span {
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+    margin-top: 5px;
+    padding: 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*窗口*/
+.IIInsomnia10 .window {
+    position: absolute;
+    background-color: #b7b8ba;
+}
+.IIInsomnia10 .window .titlebar {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    left: 0;
+    top: 0;
+    background-color: #b7b8ba;
+    line-height: 40px;
+    text-align: center;
+}
+.IIInsomnia10 .active .titlebar {
+    background-color: #6e6f71;
+}
+.IIInsomnia10 .window .titlebar .win-logo {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ffffff;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+.IIInsomnia10 .window .titlebar .title-mask {
+    position: absolute;
+    height: 40px;
+    top: 0;
+    left: 40px;
+    right: 150px;
+    background: none;
+    opacity: 0;
+    cursor: move;
+}
+.IIInsomnia10 .window .titlebar span {
+    font-size: 18px;
+    color: #ffffff;
+}
+.IIInsomnia10 .window .titlebar .handle {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    top: 0;
+    right: 0;
+}
+.IIInsomnia10 .window .titlebar a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    float: left;
+    overflow: hidden;
+}
+.IIInsomnia10 .window .titlebar .min {
+    background-image: url(../images/window/min.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.IIInsomnia10 .window .titlebar .max {
+    background-image: url(../images/window/max.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.IIInsomnia10 .window .titlebar .revert {
+    display: none;
+    background-image: url(../images/window/revert.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.IIInsomnia10 .window .titlebar .close {
+    background-color: #c75050;
+    background-image: url(../images/window/close-hover.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.IIInsomnia10 .window .titlebar .min:hover {
+    background-color: #373738;
+    background-image: url(../images/window/min-hover.png);
+}
+.IIInsomnia10 .window .titlebar .max:hover {
+    background-color: #373738;
+    background-image: url(../images/window/max-hover.png);
+}
+.IIInsomnia10 .window .titlebar .revert:hover {
+    background-color: #373738;
+    background-image: url(../images/window/revert-hover.png);
+}
+.IIInsomnia10 .window .titlebar .close:hover {
+    background-color: #e14242;
+}
+.IIInsomnia10 .window .body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    bottom: 0;
+    overflow: hidden;
+}
+.IIInsomnia10 .window .body iframe {
+    width: 99.99%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.IIInsomnia10 .window .body .mask {
+    background: none;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: none;
+}
+.IIInsomnia10 .window .body .loading {
+    background: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background: #66CEFF;
+}
+.IIInsomnia10 .window .body .loading img {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -125px;
+}
+.IIInsomnia10 .T {
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    top: -4px;
+    left: 0;
+    background: none;
+    opacity: 0;
+    z-index: 1;
+    cursor: n-resize;
+}
+.IIInsomnia10 .R {
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    top: 0;
+    right: -4px;
+    background: none;
+    opacity: 0;
+    z-index: 1;
+    cursor: e-resize;
+}
+.IIInsomnia10 .B {
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    bottom: -4px;
+    left: 0;
+    background: none;
+    opacity: 0;
+    z-index: 1;
+    cursor: s-resize;
+}
+.IIInsomnia10 .L {
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    top: 0;
+    left: -4px;
+    background: none;
+    opacity: 0;
+    z-index: 1;
+    cursor: w-resize;
+}
+.IIInsomnia10 .RT {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: -4px;
+    right: -4px;
+    background: none;
+    opacity: 0;
+    z-index: 2;
+    cursor: ne-resize;
+}
+.IIInsomnia10 .RB {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    bottom: -4px;
+    right: -4px;
+    background: none;
+    opacity: 0;
+    z-index: 2;
+    cursor: se-resize;
+}
+.IIInsomnia10 .LB {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    bottom: -4px;
+    left: -4px;
+    background: none;
+    opacity: 0;
+    z-index: 2;
+    cursor: sw-resize;
+}
+.IIInsomnia10 .LT {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: -4px;
+    left: -4px;
+    background: none;
+    opacity: 0;
+    z-index: 2;
+    cursor: nw-resize;
+}
+/*任务栏*/
+.IIInsomnia10 .taskbar {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #a2a3a5;
+    z-index: 999999999;
+}
+.IIInsomnia10 .winStart {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #6e6f71;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    color: #ffffff;
+}
+.IIInsomnia10 .winStart:hover {
+    background-color: #373738;
+}
+.IIInsomnia10 .task-wrap {
+    list-style: none;
+    overflow: hidden;
+    position: absolute;
+    height: 40px;
+    left: 40px;
+    right: 0;
+    top: 0;
+}
+.IIInsomnia10 .task {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #6e6f71;
+    color: #ffffff;
+    text-align: center;
+    line-height: 50px;
+}
+.IIInsomnia10 .task span {
+    color: #ffffff;
+}
+.IIInsomnia10 .task:hover {
+    background-color: #373738;
+}
+.IIInsomnia10 .task-wrap .active {
+    background-color: #373738;
+}
+/*开始菜单*/
+.IIInsomnia10 .startmenu {
+    display: none;
+    width: 340px;
+    height: 600px;
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    z-index: 999999999;
+}
+.IIInsomnia10 .menus {
+    width: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.IIInsomnia10 .startmenu .menus .links {
+    width: 40px; /*170px*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #6e6f71;
+    z-index: 9;
+}
+.IIInsomnia10 .startmenu .menus .links li {
+    color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+}
+.IIInsomnia10 .startmenu .menus .links li:hover {
+    background-color: #373738;
+}
+.IIInsomnia10 .startmenu .menus .links li .avatar{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+.IIInsomnia10 .startmenu .menus .links li .avatar:before{
+    display: inline-block;
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+}
+.IIInsomnia10 .startmenu .menus .links li .avatar img{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.IIInsomnia10 .startmenu .menus .links li i{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+}
+.IIInsomnia10 .startmenu .menus .links li span{
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    padding-left: 15px;
+    text-align: left;
+}
+.IIInsomnia10 .startmenu .menus .links .logout {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.IIInsomnia10 .startmenu .menus .links .logout a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+}
+.IIInsomnia10 .startmenu .programs {
+    position: absolute;
+    left: 40px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #b7b8ba;
+}
+.IIInsomnia10 .startmenu .programs ul {
+    list-style: none;
+    font-size: 0;
+}
+.IIInsomnia10 .startmenu .programs .ink {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0;
+}
+.IIInsomnia10 .startmenu .programs .ink:before{
+    display: inline-block;
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+}
+.IIInsomnia10 .startmenu .programs .ink .p-logo{
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    margin-top: 6px;
+}
+/*自定义磁贴布局 start*/
+/*深灰*/
+.IIInsomnia10 .startmenu .programs .tile1 {
+    background-color: #b7b8ba;
+    color: #ffffff;
+}
+.IIInsomnia10 .startmenu .programs .tile2 {
+    width: 200px;
+    background-color: #b7b8ba;
+    color: #ffffff;
+}
+.IIInsomnia10 .startmenu .programs .tile3 {
+    width: 200px;
+    height: 200px;
+    background-color: #b7b8ba;
+    color: #ffffff;
+    float: left;
+}
+.IIInsomnia10 .startmenu .programs .tile4 {
+    width: 200px;
+    height: 200px;
+    background-color: #b7b8ba;
+    color: #ffffff;
+    float: right;
+}
+/*浅灰*/
+.IIInsomnia10 .startmenu .programs .tile5 {
+    background-color: #e1e2e4;
+    color: #000000;
+}
+.IIInsomnia10 .startmenu .programs .tile6 {
+    width: 200px;
+    background-color: #e1e2e4;
+    color: #000000;
+}
+.IIInsomnia10 .startmenu .programs .tile7 {
+    width: 200px;
+    height: 200px;
+    background-color: #e1e2e4;
+    color: #000000;
+    float: left;
+}
+.IIInsomnia10 .startmenu .programs .tile8 {
+    width: 200px;
+    height: 200px;
+    background-color: #e1e2e4;
+    color: #000000;
+    float: right;
+}
+/*魅力红*/
+.IIInsomnia10 .startmenu .programs .tile9 {
+    background-color: #fb2733;
+    color: #ffffff;
+}
+.IIInsomnia10 .startmenu .programs .tile10 {
+    width: 200px;
+    background-color: #fb2733;
+    color: #ffffff;
+}
+.IIInsomnia10 .startmenu .programs .tile11 {
+    width: 200px;
+    height: 200px;
+    background-color: #fb2733;
+    color: #ffffff;
+    float: left;
+}
+.IIInsomnia10 .startmenu .programs .tile12 {
+    width: 200px;
+    height: 200px;
+    background-color: #fb2733;
+    color: #ffffff;
+    float: right;
+}
+/*魅力黄*/
+.IIInsomnia10 .startmenu .programs .tile13 {
+    background-color: #ffe613;
+    color: #000000;
+}
+.IIInsomnia10 .startmenu .programs .tile14 {
+    width: 200px;
+    background-color: #ffe613;
+    color: #000000;
+}
+.IIInsomnia10 .startmenu .programs .tile15 {
+    width: 200px;
+    height: 200px;
+    background-color: #ffe613;
+    color: #000000;
+    float: left;
+}
+.IIInsomnia10 .startmenu .programs .tile16 {
+    width: 200px;
+    height: 200px;
+    background-color: #ffe613;
+    color: #000000;
+    float: right;
+}
+/*魅力蓝*/
+.IIInsomnia10 .startmenu .programs .tile17 {
+   background-color: #2775e3;
+   color: #ffffff;
+}
+.IIInsomnia10 .startmenu .programs .tile18 {
+    width: 200px;
+    background-color: #2775e3;
+    color: #ffffff;
+}
+.IIInsomnia10 .startmenu .programs .tile19 {
+    width: 200px;
+    height: 200px;
+    background-color: #2775e3;
+    color: #ffffff;
+    float: left;
+}
+.IIInsomnia10 .startmenu .programs .tile20 {
+    width: 200px;
+    height: 200px;
+    background-color: #2775e3;
+    color: #ffffff;
+    float: right;
+}
+/*自定义磁贴布局 end*/
+.IIInsomnia10 .startmenu .programs .ink span {
+    display: inline-block;
+    width: 100%;
+    padding: 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+}
+/*任务栏右键菜单*/
+.IIInsomnia10 .task-context {
+    min-width: 87px;
+    min-height: 28px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 999999999;
+    display: none;
+}
+.IIInsomnia10 .task-context .inner {
+    position: absolute;
+    background: #ffffff;
+    padding: 2px;
+}
+.IIInsomnia10 .task-context .inner a {
+    display: block;
+    width: 100%;
+    color: #000000;
+    padding: 4px 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.IIInsomnia10 .task-context .inner a:hover {
+    background-color: #373738;
+    color: #ffffff;
+}
+.IIInsomnia10 .task-context .inner a span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.IIInsomnia10 .task-context .inner .close .icon {
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/window/close-hover.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #c75050;
+    margin-right: 4px;
+}
+/*桌面右键菜单*/
+.IIInsomnia10 .desktop .desktop-context {
+    position: absolute;
+    width: 120px;
+    overflow: hidden;
+    z-index: 999999999;
+    display: none;
+}
+.IIInsomnia10 .desktop .desktop-context .inner {
+    padding: 2px;
+    background-color: #ffffff;
+}
+.IIInsomnia10 .desktop .desktop-context .inner .separate {
+    line-height: 0;
+    margin: 3px;
+    border-bottom: 1px solid #d6d5d5;
+    font-size: 0;
+}
+.IIInsomnia10 .desktop .desktop-context .inner .menu a {
+    display: block;
+    height: 25px;
+    line-height: 24px;
+    padding: 0 5px 0 25px;
+    color: #000000;
+    overflow: hidden;
+}
+.IIInsomnia10 .desktop .desktop-context .inner .menu a:hover {
+    background-color: #373738;
+    color: #ffffff;
+}
+/*快捷方式右键菜单*/
+.IIInsomnia10 .desktop .shortcut-context {
+    position: absolute;
+    width: 100px;
+    overflow: hidden;
+    z-index: 999999999;
+    display: none;
+}
+.IIInsomnia10 .desktop .shortcut-context .inner {
+    padding: 2px;
+    background-color: #ffffff;
+}
+.IIInsomnia10 .desktop .shortcut-context .inner .separate {
+    line-height: 0;
+    margin: 3px;
+    border-bottom: 1px solid #d6d5d5;
+    font-size: 0;
+}
+.IIInsomnia10 .desktop .shortcut-context .inner .menu a {
+    display: block;
+    height: 25px;
+    line-height: 24px;
+    padding: 0 5px 0 25px;
+    color: #000000;
+    overflow: hidden;
+}
+.IIInsomnia10 .desktop .shortcut-context .inner .menu a:hover {
+    background-color: #373738;
+    color: #ffffff;
+}
+/*窗口标题栏右键菜单*/
+.IIInsomnia10 .desktop .titlebar-context {
+    position: absolute;
+    width: 120px;
+    overflow: hidden;
+    z-index: 999999999;
+    display: none;
+}
+.IIInsomnia10 .desktop .titlebar-context .inner {
+    padding: 2px;
+    background-color: #ffffff;
+}
+.IIInsomnia10 .desktop .titlebar-context .inner .separate {
+    line-height: 0;
+    margin: 3px;
+    border-bottom: 1px solid #d6d5d5;
+    font-size: 0;
+}
+.IIInsomnia10 .desktop .titlebar-context .inner .revert-menu {
+    display: none;
+}
+.IIInsomnia10 .desktop .titlebar-context .inner .menu a {
+    display: block;
+    height: 25px;
+    line-height: 24px;
+    padding: 0 5px 0 25px;
+    color: #000000;
+    overflow: hidden;
+}
+.IIInsomnia10 .desktop .titlebar-context .inner .menu a:hover {
+    background-color: #373738;
+    color: #ffffff;
+}
